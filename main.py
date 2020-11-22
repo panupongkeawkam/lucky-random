@@ -10,7 +10,9 @@ window = Tk()
 window.withdraw()
 window.title('Email Storage')
 
-class popupWindow(object):
+#---------------------------------ฟิล์ม-------------------------------------
+
+class popupWindow(object): 
 
     loop = False
     attempts = 0
@@ -43,6 +45,9 @@ class popupWindow(object):
                 window.quit()
             self.e .delete(0, 'end')
             messagebox.showerror('Incorrect Password', 'Incorrect password, attempts remaining: ' + str(5 - self.attempts)) #ข้อความกรณีใส่ผิด
+#----------------------------------------/ฟิล์ม----------------------------------
+
+#----------------------------------------ปอนด์,ฟิวส์----------------------------------
 
 class entity_add:
 
@@ -114,6 +119,10 @@ class entity_display:
                 dencryptedP += ' '
             else:
                 dencryptedP += chr(ord(letter) - 5)
+
+#-------------------------------/ปอนด์,ฟิวส์-----------------------------------
+
+#-------------------------------ฟิล์ม,อั้ม---------------------------------
         '''แสดงผลออกหน้าจอ'''
 
         self.label_name = Label(self.window, text=dencryptedN, font=('Courier', 14)) #ปรับ name
@@ -160,8 +169,11 @@ class entity_display:
         self.label_pass.destroy()
         self.deleteButton.destroy()
 
+#-------------------------------------/ฟิล์ม,อั้ม--------------------------------
+
 
 # ******* FUNCTIONS *********
+#-------------------------------------อั้ม-------------------------------------
 
 
 def onsubmit():
@@ -195,8 +207,11 @@ def readfile():
         count += 1
     f.close()
 
+#------------------------------------อั้ม------------------------------------------
+
 
 # ******* GRAPHICS *********
+#----------------------------------ไฟท์-------------------------------------------
 
 m = popupWindow(window)
 
@@ -231,3 +246,4 @@ pass_label2.grid(row=5, column=2)
 readfile()
 
 window.mainloop()
+#----------------------------------/ไฟท์--------------------------------------------
