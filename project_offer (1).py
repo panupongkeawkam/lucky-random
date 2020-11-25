@@ -10,7 +10,7 @@ def printRandomInt():
 def printRandomFloat():
     r_float = random.random()
     messagebox.showinfo("information","Random float number: "+str(r_float))
- 
+
 def printRandomSmall():
     r_small = random.choice(string.ascii_lowercase)
     messagebox.showinfo("information","Random lowercase character: "+r_small)
