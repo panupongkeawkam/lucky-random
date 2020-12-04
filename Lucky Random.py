@@ -1,11 +1,11 @@
 from tkinter import *
 from tkinter import messagebox
 import random, string, webbrowser
- 
+"""Function สุ่มเลข 6 หลัก"""
 def printRandomInt():
     r_int = random.randint(1,1000000)
     messagebox.showinfo(title="Good luck", message="Have a beautiful day! %06d" %(r_int))
- 
+ """Function สุ่มเลข 3 หลัก"""
 def printRandomFloat():
     r_float = random.randint(1,1000)
     messagebox.showinfo(title="Good luck", message="Have a good day! %03d " %(r_float))
@@ -14,7 +14,7 @@ def printRandomFloat():
 # def printRandomSmall():
 #     r_small = random.randint(1,100)
 #     messagebox.showinfo(title="Good luck",message="Good Luck Bro! %02d" %(r_small))
- 
+ """Function Toss coin heads or tails"""
 def printRandomCap():
     r_string = random.choice(["Heads", "Tails"])
     messagebox.showinfo(title="Good luck",message="toss coins : "+r_string)
@@ -28,7 +28,7 @@ def printRandomPassword(): #สุ่ม Password
         print('This is your password >>>>>>>> %s <<<<<<<<<' %password)
     elif condition == False:
         printRandomPassword()
-    
+"""Function random food""" 
 def printRandomMenu():
     menu_ls = ['Stewed pork leg', 'Pork panang curry', 'Fried rice', 'Beef curry', 'Papaya salad',\
             'Chicken wings', 'Chicken legs', 'Grilled pork neck', 'Pan fried seafood', 'Thai Basil Chicken ',\
@@ -40,7 +40,7 @@ def printRandomMenu():
     select = messagebox.askretrycancel(title="Menu", message="Menu for your meal: %s" %(menu_select))
     if select == True:
         printRandomMenu()
-
+"""Function Random music"""
 def gotolink():
     url = ["https://www.youtube.com/watch?v=SlPhMPnQ58k&list=PL4o29bINVT4EG_y-k5jGoOu3-Am8Nvi10",\
        "https://www.youtube.com/watch?v=Nj2U6rhnucI&list=PL4o29bINVT4EG_y-k5jGoOu3-Am8Nvi10&index=11",\
@@ -48,7 +48,7 @@ def gotolink():
         "https://www.youtube.com/watch?v=VF-r5TtlT9w&list=PL4o29bINVT4EG_y-k5jGoOu3-Am8Nvi10&index=15",\
         "https://www.youtube.com/watch?v=9HDEHj2yzew&list=PL4o29bINVT4EG_y-k5jGoOu3-Am8Nvi10&index=17"]
     webbrowser.open_new_tab(random.choice(url))
- 
+
 class Window(Frame):
  
     def __init__(self, master=None):
@@ -59,10 +59,11 @@ class Window(Frame):
     def init_window(self):
         #self.pack(fill=BOTH, expand=1)
         self.pack()
-        button1 = Button(self, text = "Lottery 1st prize", fg = "Black", bg = "White", command = printRandomInt)
-        button2 = Button(self, text = "Random Menu ", fg = "Black", bg = "white", command = printRandomMenu)
-        button3 = Button(self, text = "Random Password", fg = "Black", bg = "white", command = printRandomPassword)
-        button4 = Button(self, text = "Listen music playlist", fg = "Black", bg = "White", command = gotolink)
+        button1 = Button(self, text = "Lottery 1st prize", fg = "Black", bg = "White", command = printRandomInt)#ปุ่มสุ่มเลข6หลัก
+        button2 = Button(self, text = "Random Menu ", fg = "Black", bg = "white", command = printRandomMenu)#ปุ่มสุ่มอาหาร
+        button3 = Button(self, text = "Random Password", fg = "Black", bg = "white", command = printRandomPassword)#ปุ่มสุ่ม Password
+        button4 = Button(self, text = "Listen music playlist", fg = "Black", bg = "White", command = gotolink)#ปุ่มสุ่มเพลง
+        #ตำแหน่งของปุ่ม
         button1.grid(row = 1, column = 1,padx=10,pady=50)
         button2.grid(row = 1, column = 2,padx=10,pady=50)
         button3.grid(row = 2, column = 1,padx=10,pady=30)
