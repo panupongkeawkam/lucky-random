@@ -17,7 +17,7 @@ def printRandomSmall():
  
 def printRandomCap():
     r_string = random.choice(["Heads", "Tails"])
-    messagebox.showinfo(title="Good luck",message="Toss a coin : "+r_string)
+    messagebox.showinfo(title="Good luck",message="toss coin : "+r_string)
 
 def printRandomPassword():
     s="abcdefghijklmnopqrstuvwxyz012345678970ABCDEFGHIJKLMNOPQRSTUVWXYZ@#$%&"
