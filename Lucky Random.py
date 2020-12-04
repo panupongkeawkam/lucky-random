@@ -10,10 +10,11 @@ def printRandomInt():
 def printRandomFloat():
     r_float = random.randint(1,1000)
     messagebox.showinfo(title="Good luck", message="Have a good day! %03d " %(r_float))
- 
-def printRandomSmall():
-    r_small = random.randint(1,100)
-    messagebox.showinfo(title="Good luck",message="Good Luck Bro! %02d" %(r_small))
+
+'''สุ่มเลข 2 หลัก #function เก่า'''
+# def printRandomSmall():
+#     r_small = random.randint(1,100)
+#     messagebox.showinfo(title="Good luck",message="Good Luck Bro! %02d" %(r_small))
  
 def printRandomCap():
     r_string = random.choice(["Heads", "Tails"])
