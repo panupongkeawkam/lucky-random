@@ -3,7 +3,8 @@ import string
 import tkinter as tk
 
 def get_random_alphanumeric_string():
-    """รับเลขมาแรดด้อม เอาโค้ดมาจาก https://pynative.com/python-generate-random-string/"""
+    """รับเลขมาแรนด้อม เอาโค้ดวิธีการสุ่มมาจาก https://pynative.com/python-generate-random-string/
+        ส่วนการปรับแก้ดูเทียบกับ https://realpython.com/python-gui-tkinter/#building-a-temperature-converter-example-app"""
     all_lenght = ent_lenght.get()
     letters_count = int(all_lenght)//2
     digits_count = int(all_lenght)-letters_count
@@ -16,7 +17,7 @@ def get_random_alphanumeric_string():
     final_string = ''.join(sample_list)
     lbl_result["text"] = final_string
 
-"""ตรง tkinter เอามาจากโปรแกรมเปลี่ยนอุณหภูมิที่เว็บ https://realpython.com/python-gui-tkinter/#building-a-temperature-converter-example-app"""
+"""ตรง tkinter เอามาจากโปรแกรมเปลี่ยนอุณหภูมิที่เว็บ https://realpython.com/python-gui-tkinter/#building-a-temperature-converter-example-app มาแปลง"""
 window = tk.Tk()
 window.title("Random Password")
 frm_entry = tk.Frame(master=window)
