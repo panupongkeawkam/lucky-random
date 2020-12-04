@@ -41,9 +41,9 @@ class Window(Frame):
         button4.grid(row = 2, column = 2,padx=125,pady=50)
  
 root = Tk()
-root.configure(background = "light blue")
+root.configure(background = "white")
 root.title("Random Generate")
-root.geometry("1000x1000")
+root.geometry("700x300")
 
 app = Window(root)
 root.mainloop()
