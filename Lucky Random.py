@@ -16,9 +16,8 @@ def printRandomSmall():
     messagebox.showwarning(title="Congrat!!!",message="Good Luck Bro! %02d" %(r_small))
  
 def printRandomCap():
-    r_float = random.choice(["หัว", "ก้อย"])
-    messagebox.showinfo(title="Let try",message="Toss a coin heads/tails: "+r_float)
-#    messagebox.showinfo("testss"+r_float * come)
+    r_string = random.choice(["Heads", "Tails"])
+    messagebox.showwarning(title="Let try",message="Toss a coin : "+r_string)
  
  
 class Window(Frame):
@@ -31,10 +30,10 @@ class Window(Frame):
     def init_window(self):
         #self.pack(fill=BOTH, expand=1)
         self.pack()
-        button1 = Button(self, text = "ลอตเตอรี่ รางวัลที่ 1!", fg = "Black", bg = "White", command = printRandomInt)
-        button2 = Button(self, text = "ลอตเตอรี่ เลขท้าย3ตัว", fg = "Black", bg = "white", command = printRandomFloat)
-        button3 = Button(self, text = "ลอตเตอรี่ เลขท้าย2ตัว", fg = "Black", bg = "white", command = printRandomSmall)
-        button4 = Button(self, text = "โยนเหรียญ หัว&ก้อย", fg = "Black", bg = "White", command = printRandomCap)
+        button1 = Button(self, text = "Lottery 1st prize", fg = "Black", bg = "White", command = printRandomInt)
+        button2 = Button(self, text = "Lottery the three digit prize ", fg = "Black", bg = "white", command = printRandomFloat)
+        button3 = Button(self, text = "Lottery the two digit prize", fg = "Black", bg = "white", command = printRandomSmall)
+        button4 = Button(self, text = "Toss a coin heads/tails", fg = "Black", bg = "White", command = printRandomCap)
         button1.grid(row = 1, column = 1,padx=125,pady=50)
         button2.grid(row = 1, column = 2,padx=125,pady=50)
         button3.grid(row = 2, column = 1,padx=125,pady=50)
