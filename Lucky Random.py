@@ -21,9 +21,9 @@ def printRandomCap():
 
 def printRandomPassword():
     s="abcdefghijklmnopqrstuvwxyz012345678970ABCDEFGHIJKLMNOPQRSTUVWXYZ@#$%&"
-    x = random.randint(7, 13)
-    p =  "".join(random.sample(s,x))
-    messagebox.showinfo(title='Your password', message='Good luck!: %s' %p)
+    ranlen = random.randint(7, 13)
+    password =  "".join(random.sample(s,ranlen))
+    messagebox.showinfo(title='Your password', message='Good luck!: %s' %password)
  
  
 class Window(Frame):
