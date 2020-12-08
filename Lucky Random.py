@@ -1,15 +1,16 @@
+  
 from tkinter import *
 from tkinter import messagebox
 import random, string, webbrowser
 
 
 def Random6Digit():
-    """6 digit number random function"""
+    """สุ่มเลข 6 หลัก"""
     r_6digit = random.randint(1, 1000000) # สุ่มเลข 000001 ถึง 999999
-    messagebox.showinfo(title="Lottery", message="Have a beautiful day! %06d" %(r_6digit))
+    messagebox.showinfo(title="Lottery", message="Have a beautiful day! %06d" %(r_6digit)) #แสดง messagebox
 
 def RandomPassword():
-    """Password random function"""
+    """สุ่ม password"""
     character = "abdcefghijklmnopqrstuvwxyz012345678970ABDCEFGHIJKLMNOPQRSTUVWXYZ_" # string อักขระสำหรับสุ่ม
     r_lenght = random.randint(8, 13) # len ของ password เป็นสุ่ม
     password = "".join(random.sample(character, r_lenght)) # สลับที่ตัวอักษรของ password เป็นสุ่ม
@@ -23,7 +24,7 @@ def RandomPassword():
         RandomPassword() # กด "No" เพื่อสุ่ม password ใหม่อีกรอบ
 
 def RandomMenu():
-    """Food random function"""
+    """สุ่มเมนูอาหาร"""
     menu_ls = ['Stewed pork leg', 'Pork panang curry', 'Fried rice', 'Beef curry', 'Papaya salad',\
             'Chicken wings', 'Chicken legs', 'Grilled pork neck', 'Pan fried seafood', 'Thai Basil Chicken ',\
             'Fried pork with garlic', 'Fermented fish spicy dip', 'Steamed egg', 'Stuffed egg', 'Son-in-law Eggs',\
@@ -36,7 +37,7 @@ def RandomMenu():
         RandomMenu() # กด retry เพื่อสุ่มอาหารใหม่อีกรอบ
 
 def RandomMusicPlaylist():
-    """Music playlist random function (YouTube URL)"""
+    """สุ่มเพลง (YouTube URL)"""
     r_music = ["https://www.youtube.com/watch?v=SlPhMPnQ58k&list=PL4o29bINVT4EG_y-k5jGoOu3-Am8Nvi10"\
             , "https://www.youtube.com/watch?v=Nj2U6rhnucI&list=PL4o29bINVT4EG_y-k5jGoOu3-Am8Nvi10&index=11"\
             , "https://www.youtube.com/watch?v=dqRZDebPIGs&list=PL4o29bINVT4EG_y-k5jGoOu3-Am8Nvi10&index=12"\
@@ -45,7 +46,7 @@ def RandomMusicPlaylist():
     webbrowser.open_new_tab(random.choice(r_music)) # สุ่มรายการเพลงใน browser ของผู้ใช้โดยเปิด Tab ใหม่
 
 def RandomMiniGames():
-    """Mini games random function (.IO)"""
+    """สุ่ม Minigame"""
     r_games = ["https://agar.io/"\
             , "https://krunker.io/"\
             , "https://paper-io.com/?referer=paper.io&channel=11"\
@@ -53,8 +54,40 @@ def RandomMiniGames():
             , "https://diep.io/"\
             , "https://surviv.io/"] # ลิงค์ของมินิเกมส์ .io
     webbrowser.open_new_tab(random.choice(r_games)) # สุ่มมินิเกมส์ใน browser ของผู้ใช้โดยเปิด Tab ใหม่
+def RandomSort():
+    '''สุ่มวิธีการ sort'''
+    def FunctionSort():
+        ''' ฟังก์ชัน sort'''
+        times = ent_lenght.get()
+        ans = []
+        lst = ['Selection Sort', 'Bubble Sort', 'Insertion Sort', 'Quick Sort', 'Merge Sort', 'Linear Search', 'Binary Search']
+        if times in ['1' ,'2', '3', '4', '5', '6', '7']:
+            for _ in range(int(times)):
+                txt = random.choice(lst)
+                lst.remove(txt)
+                ans.append(txt)
+            lbl_result["text"] = " , ".join(ans)
+        else:
+            messagebox.showerror(title="Error", message="Must be integer 1-7")
 
+    window = Tk()
+    window.title("Sort Test Random")
+    frm_entry = Frame(master=window)
+    ent_lenght = Entry(master=frm_entry, width=10)
+    lbl_lenght = Label(master=frm_entry, text="How many test you want to randomize? (1-7)")
+    lbl_lenght.grid(row=1, column=0, sticky="w")
+    ent_lenght.grid(row=1, column=1, sticky="w")
+    btn_rando = Button(master=window, text='Radomize', command=FunctionSort)
+    lbl_result = Label(master=window, text="You need to do...")
+    frm_entry.grid(row=1, column=0, padx=10)
+    btn_rando.grid(row=1, column=1, pady=10)
+    lbl_result.grid(row=2, column=0, padx=10)
+    window.mainloop()
+
+
+    FunctionSort()
 class Window(Frame):
+    '''GUI'''
 
     def __init__(self, master=None):
         Frame.__init__(self, master)
@@ -62,24 +95,25 @@ class Window(Frame):
         self.init_window()
 
     def init_window(self):
-        # self.pack(fill=BOTH, expand=1)
+        #คุณสมบัติของปุ่ม
         self.pack(expand=True)
-        button1 = Button(self, text="Random Lottery", font="16", fg="#000000", bg="#ffb3ba", borderwidth="5", height=3, width=20, command=Random6Digit) # ปุ่มสุ่มเลข6หลัก
-        button2 = Button(self, text="Random Menu", font="16", fg="#000000", bg="#ffdfba", borderwidth="5", height=3, width=20, command=RandomMenu) # ปุ่มสุ่มอาหาร
-        button3 = Button(self, text="Random Password", font="16", fg="#000000", bg="#ffffba", borderwidth="5", height=3, width=20, command=RandomPassword) # ปุ่มสุ่ม Password
-        button4 = Button(self, text="Random Song", font="16", fg="#000000", bg="#baffc9", borderwidth="5", height=3, width=20, command=RandomMusicPlaylist) # ปุ่มสุ่มเพลง
-        button5 = Button(self, text="Random Minigame", font="16", fg="#000000", bg="#957dad", borderwidth="5", height=3, width=20, command=RandomMiniGames) # ปุ่มสุ่มมินิเกมส์
+        button1 = Button(self, text="Lottery", font="20", fg="#EAECEE",activebackground="#fe6612", activeforeground="#fe6612", bg="#21618C", height=2, width=9, command=Random6Digit) # ปุ่มสุ่มเลข6หลัก
+        button2 = Button(self, text="Menu", font="20", fg="#000000", activebackground="#fe6612", activeforeground="#fe6612", bg="#85C1E9", height=2, width=9, command=RandomMenu) # ปุ่มสุ่มเลข6หลัก
+        button3 = Button(self, text="Password", font="20", fg="#EAECEE", activebackground="#fe6612", activeforeground="#fe6612", bg="#3498DB", height=2, width=9, command=RandomPassword) # ปุ่มสุ่มเลข6หลัก
+        button4 = Button(self, text="Song", font="20", fg="#EAECEE", activebackground="#fe6612", activeforeground="#fe6612", bg="#5DADE2", height=2, width=9, command=RandomMusicPlaylist) # ปุ่มสุ่มเลข6หลัก
+        button5 = Button(self, text="Minigame", font="20", fg="#000000", activebackground="#fe6612", activeforeground="#fe6612", bg="#3498DB", height=2, width=9, command=RandomMiniGames) # ปุ่มสุ่มเลข6หลัก
+        button6 = Button(self, text="Sort", font="20", fg="#EAECEE", activebackground="#fe6612", activeforeground="#fe6612", bg="#2E86C1", height=2, width=9, command=RandomSort) # ปุ่มสุ่มเลข6หลัก
         # ตำแหน่งของปุ่ม
-        button1.grid(row=1, column=1, padx=20, pady=10)
-        button2.grid(row=1, column=2, padx=20, pady=10)
-        button3.grid(row=2, column=1, padx=20, pady=10)
-        button4.grid(row=2, column=2, padx=20, pady=10)
-        button5.grid(row=3, column=1, padx=20, pady=10)
+        button1.grid(row=1, column=1, padx=20, pady=20)
+        button2.grid(row=1, column=2, padx=20, pady=20)
+        button3.grid(row=1, column=3, padx=20, pady=20)
+        button4.grid(row=2, column=1, padx=20, pady=20)
+        button5.grid(row=2, column=2, padx=20, pady=20)
+        button6.grid(row=2, column=3, padx=20, pady=20)
+root = Tk() #???
+root.configure(background="#f0f0f0") #background
+root.title("Let's me decide for your...") #title
+root.geometry("500x250") #resolution
 
-root = Tk()
-root.configure(background="white")
-root.title("Let's me decide for your...")
-root.geometry("600x350")
-
-app = Window(root)
-root.mainloop()
+app = Window(root) #เรียก class
+root.mainloop() #???
