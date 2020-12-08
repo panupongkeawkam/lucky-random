@@ -58,31 +58,32 @@ def RandomSort():
     '''สุ่มวิธีการ sort'''
     def FunctionSort():
         ''' ฟังก์ชัน sort'''
-        times = ent_lenght.get()
-        ans = []
-        lst = ['Selection Sort', 'Bubble Sort', 'Insertion Sort', 'Quick Sort', 'Merge Sort', 'Linear Search', 'Binary Search']
-        if times in ['1' ,'2', '3', '4', '5', '6', '7']:
-            for _ in range(int(times)):
+        times = ent_lenght.get() # Input range
+        ans = [] # list เพือนำมาเก็บคำตอบ
+        lst = ['Selection Sort', 'Bubble Sort', 'Insertion Sort', 'Quick Sort', 'Merge Sort', 'Linear Search', 'Binary Search']# สิ่งที่จะนำมาใช้สุ่ม
+        if times in ['1' ,'2', '3', '4', '5', '6', '7']:# ดัก test case
+            for _ in range(int(times)):# วิธีการที่ใช้ สุ่ม
                 txt = random.choice(lst)
                 lst.remove(txt)
                 ans.append(txt)
             lbl_result["text"] = " , ".join(ans)
-        else:
+        else:# ดัก Error 
             messagebox.showerror(title="Error", message="Must be integer 1-7")
 
-    window = Tk()
-    window.title("Sort Test Random")
+    window = Tk()# เรียกใช้ import tkinter
+    window.title("Sort Test Random")# ชื่อของ tkinter
     frm_entry = Frame(master=window)
-    ent_lenght = Entry(master=frm_entry, width=10)
-    lbl_lenght = Label(master=frm_entry, text="How many test you want to randomize? (1-7)")
-    lbl_lenght.grid(row=1, column=0, sticky="w")
-    ent_lenght.grid(row=1, column=1, sticky="w")
-    btn_rando = Button(master=window, text='Radomize', command=FunctionSort)
-    lbl_result = Label(master=window, text="You need to do...")
+    ent_lenght = Entry(master=frm_entry, width=10)#ขนาดของช่องรับ Input
+    lbl_lenght = Label(master=frm_entry, text="How many test you want to randomize? (1-7)")# format input
+    lbl_lenght.grid(row=1, column=0, sticky="w")#ตำแหน่งของ format input
+    ent_lenght.grid(row=1, column=1, sticky="w")#ตำแหน่งของ ช่องรับ Input
+    btn_rando = Button(master=window, text='Radomize', command=FunctionSort)#ปุ่มที่ใช้ในการเรียกฟังก์ชัน
+    lbl_result = Label(master=window, text="You need to do...")#ตำแหน่งที่ คำตอบจะออกมา
+    #ขนาดและตำแหน่ง
     frm_entry.grid(row=1, column=0, padx=10)
     btn_rando.grid(row=1, column=1, pady=10)
     lbl_result.grid(row=2, column=0, padx=10)
-    window.mainloop()
+    window.mainloop() #ทำให้ Tkinter แสดงผล
 
 
     FunctionSort()
