@@ -1,3 +1,4 @@
+  
 from tkinter import *
 from tkinter import messagebox
 import random, string, webbrowser
@@ -68,6 +69,37 @@ def RandomminiGames():
             , "https://diep.io/"\
             , "https://surviv.io/"] # ลิงค์ของมินิเกมส์ .io
     webbrowser.open_new_tab(random.choice(r_games)) # สุ่มมินิเกมส์ใน browser ของผู้ใช้โดยเปิด Tab ใหม่
+def RandomSort():
+
+    def FunctionSort():
+        times = ent_lenght.get()
+        ans = []
+        lst = ['Selection Sort', 'Bubble Sort', 'Insertion Sort', 'Quick Sort', 'Merge Sort', 'Linear Search', 'Binary Search']
+        if times in ['1' ,'2', '3', '4', '5', '6', '7']:
+            for _ in range(int(times)):
+                txt = random.choice(lst)
+                lst.remove(txt)
+                ans.append(txt)
+            lbl_result["text"] = " , ".join(ans)
+        else:
+            messagebox.showerror(title="Error", message="Must be integer 1-7")
+
+    window = Tk()
+    window.title("Sort Test Random")
+    frm_entry = Frame(master=window)
+    ent_lenght = Entry(master=frm_entry, width=10)
+    lbl_lenght = Label(master=frm_entry, text="How many test you want to random?")
+    lbl_lenght.grid(row=1, column=0, sticky="e")
+    ent_lenght.grid(row=1, column=1, sticky="w")
+    btn_rando = Button(master=window, text='Generate Now!', command=FunctionSort)
+    lbl_result = Label(master=window, text="You need to do...")
+    frm_entry.grid(row=1, column=0, padx=10)
+    btn_rando.grid(row=1, column=1, pady=10)
+    lbl_result.grid(row=2, column=0, padx=10)
+    window.mainloop()
+
+
+    FunctionSort()
 class Window(Frame):
 
     def __init__(self, master=None):
@@ -83,14 +115,14 @@ class Window(Frame):
         button3 = Button(self, text="Random Password", font="72", fg="white", bg="blue", borderwidth="5", command=RandomPassword) # ปุ่มสุ่ม Password
         button4 = Button(self, text="Listen music playlist", font="72", fg="white", bg="light blue", borderwidth="5", command=RandomMusicPlaylist) # ปุ่มสุ่มเพลง
         button5 = Button(self, text="Random Mini Games", font="72", fg="white", bg="light blue", borderwidth="5", command=RandomminiGames) # ปุ่มมินิเกม
-        #button6 = Button(self, text="Random 3 Digits", font="72", fg="white", bg="green", borderwidth="5", command=Random3Digit)
+        button6 = Button(self, text="Random Sort", font="72", fg="white", bg="green", borderwidth="5", command=RandomSort)
         # ตำแหน่งของปุ่ม
         button1.pack(fill=BOTH, side=TOP, expand=True)
         button2.pack(fill=BOTH, side=TOP, expand=True)
         button3.pack(fill=BOTH, side=TOP, expand=True)
         button4.pack(fill=BOTH, side=TOP, expand=True)
         button5.pack(fill=BOTH, side=TOP, expand=True)
-        #button6.pack(fill=BOTH, side=TOP, expand=True)
+        button6.pack(fill=BOTH, side=TOP, expand=True)
         # button1.grid(row=1, column=1, padx=50, pady=50)
         # button2.grid(row=1, column=2, padx=50, pady=50)
         # button3.grid(row=2, column=1, padx=50, pady=50)
