@@ -1,4 +1,3 @@
-  
 from tkinter import *
 from tkinter import messagebox
 import random, string, webbrowser
@@ -57,8 +56,18 @@ def RandomMusicPlaylist():
        "https://www.youtube.com/watch?v=dqRZDebPIGs&list=PL4o29bINVT4EG_y-k5jGoOu3-Am8Nvi10&index=12",\
         "https://www.youtube.com/watch?v=VF-r5TtlT9w&list=PL4o29bINVT4EG_y-k5jGoOu3-Am8Nvi10&index=15",\
         "https://www.youtube.com/watch?v=9HDEHj2yzew&list=PL4o29bINVT4EG_y-k5jGoOu3-Am8Nvi10&index=17",\
-        "https://www.youtube.com/watch?v=1gSe78TIEEk&list=RD1gSe78TIEEk&start_radio=1"] # ลิงค์ของรายการเพลง (YouTube)
-    webbrowser.open_new_tab(random.choice(url)) # สุ่มรายการเพลงใน browser ของผู้ใช้โดยเปิด Tab 
+        "https://www.youtube.com/watch?v=1gSe78TIEEk&list=RD1gSe78TIEEk&start_radio=1",\
+        "https://www.youtube.com/watch?v=ZMK42pj7830&list=RDZMK42pj7830&start_radio=1&t=1&t=2"] # ลิงค์ของรายการเพลง (YouTube)
+    webbrowser.open_new_tab(random.choice(url)) # สุ่มรายการเพลงใน browser ของผู้ใช้โดยเปิด Tab
+def RandomminiGames():
+    """Mini games random function (.IO)"""
+    r_games = ["https://agar.io/"\
+            , "https://krunker.io/"\
+            , "https://paper-io.com/?referer=paper.io&channel=11"\
+            , "http://slither.io/"\
+            , "https://diep.io/"\
+            , "https://surviv.io/"] # ลิงค์ของมินิเกมส์ .io
+    webbrowser.open_new_tab(random.choice(r_games)) # สุ่มมินิเกมส์ใน browser ของผู้ใช้โดยเปิด Tab ใหม่
 class Window(Frame):
 
     def __init__(self, master=None):
@@ -69,19 +78,19 @@ class Window(Frame):
     def init_window(self):
         # self.pack(fill=BOTH, expand=1)
         self.pack(fill=BOTH, side=LEFT, expand=True)
-        button1 = Button(self, text="Lottery 1st prize", font="72", fg="white", bg="red", borderwidth="5", command=Random6Digit) # ปุ่มสุ่มเลข6หลัก
+        button1 = Button(self, text="Random 6 Digits", font="72", fg="white", bg="red", borderwidth="5", command=Random6Digit) # ปุ่มสุ่มเลข6หลัก หวย
         button2 = Button(self, text="Random Menu ", font="72", fg="white", bg="green", borderwidth="5", command=RandomMenu) # ปุ่มสุ่มอาหาร
         button3 = Button(self, text="Random Password", font="72", fg="white", bg="blue", borderwidth="5", command=RandomPassword) # ปุ่มสุ่ม Password
         button4 = Button(self, text="Listen music playlist", font="72", fg="white", bg="light blue", borderwidth="5", command=RandomMusicPlaylist) # ปุ่มสุ่มเพลง
-        button5 = Button(self, text="Random 2 Digits", font="72", fg="white", bg="light blue", borderwidth="5", command=Random2Digit)
-        button6 = Button(self, text="Random 3 Digits", font="72", fg="white", bg="green", borderwidth="5", command=Random3Digit)
+        button5 = Button(self, text="Random Mini Games", font="72", fg="white", bg="light blue", borderwidth="5", command=RandomminiGames) # ปุ่มมินิเกม
+        #button6 = Button(self, text="Random 3 Digits", font="72", fg="white", bg="green", borderwidth="5", command=Random3Digit)
         # ตำแหน่งของปุ่ม
         button1.pack(fill=BOTH, side=TOP, expand=True)
         button2.pack(fill=BOTH, side=TOP, expand=True)
         button3.pack(fill=BOTH, side=TOP, expand=True)
         button4.pack(fill=BOTH, side=TOP, expand=True)
         button5.pack(fill=BOTH, side=TOP, expand=True)
-        button6.pack(fill=BOTH, side=TOP, expand=True)
+        #button6.pack(fill=BOTH, side=TOP, expand=True)
         # button1.grid(row=1, column=1, padx=50, pady=50)
         # button2.grid(row=1, column=2, padx=50, pady=50)
         # button3.grid(row=2, column=1, padx=50, pady=50)
