@@ -117,4 +117,4 @@ root.title("Let's me decide for your...") #title
 root.geometry("500x250") #resolution
 
 app = Window(root) #เรียก class
-root.mainloop() #???
+root.mainloop() #คำสั่งเพื่อใช้ run ขึ้นหน้า Tkinter
