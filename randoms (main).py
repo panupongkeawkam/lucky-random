@@ -56,7 +56,8 @@ def RandomMusicPlaylist():
        "https://www.youtube.com/watch?v=dqRZDebPIGs&list=PL4o29bINVT4EG_y-k5jGoOu3-Am8Nvi10&index=12",\
         "https://www.youtube.com/watch?v=VF-r5TtlT9w&list=PL4o29bINVT4EG_y-k5jGoOu3-Am8Nvi10&index=15",\
         "https://www.youtube.com/watch?v=9HDEHj2yzew&list=PL4o29bINVT4EG_y-k5jGoOu3-Am8Nvi10&index=17",\
-        "https://www.youtube.com/watch?v=1gSe78TIEEk&list=RD1gSe78TIEEk&start_radio=1"] # ลิงค์ของรายการเพลง (YouTube)
+        "https://www.youtube.com/watch?v=1gSe78TIEEk&list=RD1gSe78TIEEk&start_radio=1",\
+        "https://www.youtube.com/watch?v=ZMK42pj7830&list=RDZMK42pj7830&start_radio=1&t=1&t=2"] # ลิงค์ของรายการเพลง (YouTube)
     webbrowser.open_new_tab(random.choice(url)) # สุ่มรายการเพลงใน browser ของผู้ใช้โดยเปิด Tab
 def RandomminiGames():
     """Mini games random function (.IO)"""
@@ -81,7 +82,7 @@ class Window(Frame):
         button2 = Button(self, text="Random Menu ", font="72", fg="white", bg="green", borderwidth="5", command=RandomMenu) # ปุ่มสุ่มอาหาร
         button3 = Button(self, text="Random Password", font="72", fg="white", bg="blue", borderwidth="5", command=RandomPassword) # ปุ่มสุ่ม Password
         button4 = Button(self, text="Listen music playlist", font="72", fg="white", bg="light blue", borderwidth="5", command=RandomMusicPlaylist) # ปุ่มสุ่มเพลง
-        button5 = Button(self, text="Random Mini Games", font="72", fg="white", bg="light blue", borderwidth="5", command=RandomminiGames)
+        button5 = Button(self, text="Random Mini Games", font="72", fg="white", bg="light blue", borderwidth="5", command=RandomminiGames) # ปุ่มมินิเกม
         #button6 = Button(self, text="Random 3 Digits", font="72", fg="white", bg="green", borderwidth="5", command=Random3Digit)
         # ตำแหน่งของปุ่ม
         button1.pack(fill=BOTH, side=TOP, expand=True)
