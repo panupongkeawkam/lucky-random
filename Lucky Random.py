@@ -10,7 +10,7 @@ def Random6Digit():
 
 def RandomPassword():
     """Password random function"""
-    character = "abdcefghijklmnopqrstuvwxyz012345678970ABDCEFGHIJKLMNOPQRSTUVWXYZ" # string อักขระสำหรับสุ่ม
+    character = "abdcefghijklmnopqrstuvwxyz012345678970ABDCEFGHIJKLMNOPQRSTUVWXYZ_" # string อักขระสำหรับสุ่ม
     r_lenght = random.randint(8, 13) # len ของ password เป็นสุ่ม
     password = "".join(random.sample(character, r_lenght)) # สลับที่ตัวอักษรของ password เป็นสุ่ม
     while not password.isidentifier():
