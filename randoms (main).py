@@ -77,11 +77,11 @@ class Window(Frame):
     def init_window(self):
         # self.pack(fill=BOTH, expand=1)
         self.pack(fill=BOTH, side=LEFT, expand=True)
-        button1 = Button(self, text="Lottery 1st prize", font="72", fg="white", bg="red", borderwidth="5", command=Random6Digit) # ปุ่มสุ่มเลข6หลัก
+        button1 = Button(self, text="Random 6 Digits", font="72", fg="white", bg="red", borderwidth="5", command=Random6Digit) # ปุ่มสุ่มเลข6หลัก หวย
         button2 = Button(self, text="Random Menu ", font="72", fg="white", bg="green", borderwidth="5", command=RandomMenu) # ปุ่มสุ่มอาหาร
         button3 = Button(self, text="Random Password", font="72", fg="white", bg="blue", borderwidth="5", command=RandomPassword) # ปุ่มสุ่ม Password
         button4 = Button(self, text="Listen music playlist", font="72", fg="white", bg="light blue", borderwidth="5", command=RandomMusicPlaylist) # ปุ่มสุ่มเพลง
-        button5 = Button(self, text="Random Mini Games", font="72", fg="white", bg="light blue", borderwidth="5", command=RandomminiGames) # ปุ่มสุ่มมินิเกม
+        button5 = Button(self, text="Random Mini Games", font="72", fg="white", bg="light blue", borderwidth="5", command=RandomminiGames)
         #button6 = Button(self, text="Random 3 Digits", font="72", fg="white", bg="green", borderwidth="5", command=Random3Digit)
         # ตำแหน่งของปุ่ม
         button1.pack(fill=BOTH, side=TOP, expand=True)
