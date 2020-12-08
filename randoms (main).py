@@ -81,7 +81,7 @@ class Window(Frame):
         button2 = Button(self, text="Random Menu ", font="72", fg="white", bg="green", borderwidth="5", command=RandomMenu) # ปุ่มสุ่มอาหาร
         button3 = Button(self, text="Random Password", font="72", fg="white", bg="blue", borderwidth="5", command=RandomPassword) # ปุ่มสุ่ม Password
         button4 = Button(self, text="Listen music playlist", font="72", fg="white", bg="light blue", borderwidth="5", command=RandomMusicPlaylist) # ปุ่มสุ่มเพลง
-        button5 = Button(self, text="Random Mini Games", font="72", fg="white", bg="light blue", borderwidth="5", command=RandomminiGames)
+        button5 = Button(self, text="Random Mini Games", font="72", fg="white", bg="light blue", borderwidth="5", command=RandomminiGames) # ปุ่มสุ่มมินิเกม
         #button6 = Button(self, text="Random 3 Digits", font="72", fg="white", bg="green", borderwidth="5", command=Random3Digit)
         # ตำแหน่งของปุ่ม
         button1.pack(fill=BOTH, side=TOP, expand=True)
