@@ -68,18 +68,17 @@ def RandomStudents():
     def FunctionStudents():
         ''' ฟังก์ชันสุ่มรหัสนักศึกษา'''
         times = ent_lenght.get() # Input range
-        lst_result = [] # list เพือนำมาเก็บคำตอบ
-        if times in [str(i) for i in range(1, 11)]:# ดัก test case
-            while len(lst_result) < int(times):# วิธีการที่ใช้ สุ่ม
+        lst_result = set() # ตัวแปรเพือนำมาเก็บคำตอบ
+        if times in [str(i) for i in range(1, 11)]: # ดัก test case
+            while len(lst_result) < int(times): # วิธีการที่ใช้ สุ่ม
                 charge = ("63070%03d" %random.randint(1, 193))
-                if not charge in lst_result:
-                    lst_result.append(charge)
-                else:
-                    continue
-            lst_result.sort()
+                lst_result.add(charge)
+            lst_result = sorted(lst_result)
+            if int(times) >= 6:
+                lst_result.insert(5, "\n")
             answer["text"] = "  ".join(lst_result)
-        else:# ดัก Error
-            messagebox.showerror(title="Error", message="Must be integer 1-7")
+        else: # ดัก Error
+            messagebox.showerror(title="Error", message="Must be integer 1-10")
 
     '''Student IDs Window setup'''
     root2 = Tk()# เรียกใช้ import tkinter
