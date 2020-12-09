@@ -1,4 +1,3 @@
-  
 from tkinter import *
 from tkinter import messagebox
 import random, string, webbrowser
@@ -8,7 +7,7 @@ def Random6Digit():
     """สุ่มเลข 6 หลัก"""
     r_6digit = random.randint(1, 1000000) # สุ่มเลข 000001 ถึง 999999
     condition = messagebox.askretrycancel(title="Lottery", message="Have a beautiful day!\n\n" + " "*12 + "%06d" %(r_6digit)) #แสดง messagebox
-    if condition == True: 
+    if condition == True: #ปุ่ม retry
         Random6Digit()
 
 def RandomPassword():
@@ -22,8 +21,8 @@ def RandomPassword():
     if condition == True:
         print('>>>>>>>', (password + " ").ljust(20, "<")) # กด "Yes" เพื่อ print ข้อมูลมาใช้
         RandomPassword()
-    elif condition == False:
-        RandomPassword() # กด "No" เพื่อสุ่ม password ใหม่อีกรอบ
+    elif condition == False: #ปุ่ม no
+        RandomPassword()
 
 def RandomMenu():
     """สุ่มเมนูอาหาร"""
@@ -36,8 +35,8 @@ def RandomMenu():
             'Congee', 'Tom Yum Kung', 'Fried mussel pancakes', 'Crisp fried calamari', 'Spicy noodle salad'] # รายการอาหารที่จะสุ่ม
     menu_select = random.choice(menu_ls) # สุ่มอาหารจาก menu_ls มาหนึ่งรายการ
     select = messagebox.askretrycancel(title="Menu", message="Menu for your meal\n\n" + f"{menu_select}".center(21))
-    if select == True:
-        RandomMenu() # กด retry เพื่อสุ่มอาหารใหม่อีกรอบ
+    if select == True: #ปุ่ม retry
+        RandomMenu()
 
 def RandomMusicPlaylist():
     """สุ่มเพลง (YouTube URL)"""
@@ -74,6 +73,7 @@ def RandomStudents():
         else:# ดัก Error 
             messagebox.showerror(title="Error", message="Must be integer 1-7")
 
+    '''Student IDs Window setup'''
     root2 = Tk()# เรียกใช้ import tkinter
     root2.title("Students ID")# ชื่อของ tkinter
     frm_entry = Frame(master=root2)
@@ -81,7 +81,7 @@ def RandomStudents():
     btn_rando = Button(master=root2, bg="#21618C", fg="#EAECEE", height=1, width=16, font=8, text='Radomize', command=FunctionStudents)#ปุ่มที่ใช้ในการเรียกฟังก์ชัน
     lbl_lenght = Label(master=frm_entry, text="How many students you want to randomize? (1-7)  ")# format input
     answer = Label(master=root2, text="Lucky guys is...") # ตำแหน่งที่ คำตอบจะออกมา
-    # ขนาดและตำแหน่ง
+    '''ขนาดและตำแหน่ง'''
     lbl_lenght.grid(row=1, column=0,) # ตำแหน่งของ format input
     ent_lenght.grid(row=1, column=1,) # ตำแหน่งของ ช่องรับ Input
     frm_entry.grid(row=1, column=0, pady=8, padx=12)
