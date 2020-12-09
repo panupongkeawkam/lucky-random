@@ -1,7 +1,6 @@
 from tkinter import *
 from tkinter import messagebox
-import random, string, webbrowser
-
+import random, webbrowser
 
 def Random6Digit():
     """สุ่มเลข 6 หลัก"""
@@ -70,7 +69,7 @@ def RandomStudents():
             for _ in range(int(times)):# วิธีการที่ใช้ สุ่ม
                 lst_result.append("63070%03d" %random.randint(1, 193))
             answer["text"] = "  ".join(lst_result)
-        else:# ดัก Error 
+        else:# ดัก Error
             messagebox.showerror(title="Error", message="Must be integer 1-7")
 
     '''Student IDs Window setup'''
@@ -100,15 +99,17 @@ class Window(Frame):
     def init_window(self):
         #คุณสมบัติของปุ่ม
         self.pack(expand=True)
-        button0 = Label(self, text="👀 RANDOM 👀", font=72, fg="#fe6612")
-        button1 = Button(self, text="Lottery", font=16, fg="#EAECEE", bg="#21618C",activebackground="#fe6612", activeforeground="#fe6612", height=2, width=12, command=Random6Digit) # ปุ่มสุ่มเลข6หลัก
+        label = Label(self, text="👀 RANDOM 👀", font=72, fg="#fe6612")
+        button1 = Button(self, text="Lottery", font=16, \
+        fg="#EAECEE", bg="#21618C", activebackground="#fe6612", activeforeground="#fe6612", \
+        height=2, width=12, command=Random6Digit) # ปุ่มสุ่มเลข6หลัก
         button2 = Button(self, text="Menu", font=16, fg="#2C2C2C", bg="#85C1E9", activebackground="#fe6612", activeforeground="#fe6612", height=2, width=12, command=RandomMenu) # ปุ่มสุ่มเมนูอาหาร
         button3 = Button(self, text="Password", font=16, fg="#EAECEE", bg="#3498DB", activebackground="#fe6612", activeforeground="#fe6612", height=2, width=12, command=RandomPassword) # ปุ่มสุ่มPassword
         button4 = Button(self, text="Song", font=16, fg="#424242", bg="#5DADE2", activebackground="#fe6612", activeforeground="#fe6612", height=2, width=12, command=RandomMusicPlaylist) # ปุ่มสุ่มเพลง
         button5 = Button(self, text="Minigame", font=16, fg="#343434", bg="#3498DB", activebackground="#fe6612", activeforeground="#fe6612", height=2, width=12, command=RandomMiniGames) # ปุ่มสุ่มมินิเกม
         button6 = Button(self, text="Students ID", font=16, fg="#E0E0E0", bg="#2E86C1", activebackground="#fe6612", activeforeground="#fe6612", height=2, width=12, command=RandomStudents) # ปุ่มสุ่มรหัสนักศึกษา
         # ตำแหน่งของปุ่ม
-        button0.grid(row=0, column=2, pady=12)
+        label.grid(row=0, column=2, pady=12)
         button1.grid(row=1, column=1, padx=16, pady=16)
         button2.grid(row=1, column=2, padx=16, pady=16)
         button3.grid(row=1, column=3, padx=16, pady=16)
@@ -116,10 +117,9 @@ class Window(Frame):
         button5.grid(row=2, column=2, padx=16, pady=16)
         button6.grid(row=2, column=3, padx=16, pady=16)
 
-root = Tk() #???
+root = Tk()
 root.configure(background="#f0f0f0") #background
 root.title("Let's me decide for your...") #title
 root.geometry("540x250") #resolution
-
 app = Window(root) #เรียก class
 root.mainloop() #คำสั่งเพื่อใช้ run ขึ้นหน้า Tkinter
