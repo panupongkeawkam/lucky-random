@@ -85,11 +85,9 @@ def RandomStudents():
     lbl_lenght.grid(row=1, column=0,) # ตำแหน่งของ format input
     ent_lenght.grid(row=1, column=1,) # ตำแหน่งของ ช่องรับ Input
     frm_entry.grid(row=1, column=0, pady=8, padx=12)
-    btn_rando.grid(row=2, column=0, pady=8, padx=12)
-    answer.grid(row=3, column=0, pady=8, padx=16)
+    btn_rando.grid(row=2, column=0, pady=8, padx=12)#ตำแหน่งและขนาดชองปุ่มกดเริ่มการสุ่ม
+    answer.grid(row=3, column=0, pady=8, padx=16)#ตำแหน่งและขนาดช่องของคำตอบ
     root2.mainloop() # ทำให้ Tkinter แสดงผล
-
-    FunctionStudents()
 
 class Window(Frame):
     '''GUI'''
@@ -104,11 +102,11 @@ class Window(Frame):
         self.pack(expand=True)
         button0 = Label(self, text="👀 RANDOM 👀", font=72, fg="#fe6612")
         button1 = Button(self, text="Lottery", font=16, fg="#EAECEE", bg="#21618C",activebackground="#fe6612", activeforeground="#fe6612", height=2, width=12, command=Random6Digit) # ปุ่มสุ่มเลข6หลัก
-        button2 = Button(self, text="Menu", font=16, fg="#2C2C2C", bg="#85C1E9", activebackground="#fe6612", activeforeground="#fe6612", height=2, width=12, command=RandomMenu) # ปุ่มสุ่มเลข6หลัก
-        button3 = Button(self, text="Password", font=16, fg="#EAECEE", bg="#3498DB", activebackground="#fe6612", activeforeground="#fe6612", height=2, width=12, command=RandomPassword) # ปุ่มสุ่มเลข6หลัก
-        button4 = Button(self, text="Song", font=16, fg="#424242", bg="#5DADE2", activebackground="#fe6612", activeforeground="#fe6612", height=2, width=12, command=RandomMusicPlaylist) # ปุ่มสุ่มเลข6หลัก
-        button5 = Button(self, text="Minigame", font=16, fg="#343434", bg="#3498DB", activebackground="#fe6612", activeforeground="#fe6612", height=2, width=12, command=RandomMiniGames) # ปุ่มสุ่มเลข6หลัก
-        button6 = Button(self, text="Students ID", font=16, fg="#E0E0E0", bg="#2E86C1", activebackground="#fe6612", activeforeground="#fe6612", height=2, width=12, command=RandomStudents) # ปุ่มสุ่มเลข6หลัก
+        button2 = Button(self, text="Menu", font=16, fg="#2C2C2C", bg="#85C1E9", activebackground="#fe6612", activeforeground="#fe6612", height=2, width=12, command=RandomMenu) # ปุ่มสุ่มเมนูอาหาร
+        button3 = Button(self, text="Password", font=16, fg="#EAECEE", bg="#3498DB", activebackground="#fe6612", activeforeground="#fe6612", height=2, width=12, command=RandomPassword) # ปุ่มสุ่มPassword
+        button4 = Button(self, text="Song", font=16, fg="#424242", bg="#5DADE2", activebackground="#fe6612", activeforeground="#fe6612", height=2, width=12, command=RandomMusicPlaylist) # ปุ่มสุ่มเพลง
+        button5 = Button(self, text="Minigame", font=16, fg="#343434", bg="#3498DB", activebackground="#fe6612", activeforeground="#fe6612", height=2, width=12, command=RandomMiniGames) # ปุ่มสุ่มมินิเกม
+        button6 = Button(self, text="Students ID", font=16, fg="#E0E0E0", bg="#2E86C1", activebackground="#fe6612", activeforeground="#fe6612", height=2, width=12, command=RandomStudents) # ปุ่มสุ่มรหัสนักศึกษา
         # ตำแหน่งของปุ่ม
         button0.grid(row=0, column=2, pady=12)
         button1.grid(row=1, column=1, padx=16, pady=16)
