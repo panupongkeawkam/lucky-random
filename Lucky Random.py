@@ -89,8 +89,6 @@ def RandomStudents():
     answer.grid(row=3, column=0, pady=8, padx=16)#ตำแหน่งและขนาดช่องของคำตอบ
     root2.mainloop() # ทำให้ Tkinter แสดงผล
 
-    FunctionStudents()
-
 class Window(Frame):
     '''GUI'''
 
