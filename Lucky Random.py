@@ -85,7 +85,7 @@ def RandomStudents():
     lbl_lenght.grid(row=1, column=0,) # ตำแหน่งของ format input
     ent_lenght.grid(row=1, column=1,) # ตำแหน่งของ ช่องรับ Input
     frm_entry.grid(row=1, column=0, pady=8, padx=12)
-    btn_rando.grid(row=2, column=0, pady=8, padx=12)
+    btn_rando.grid(row=2, column=0, pady=8, padx=12)#กำหนดตำแหน่งชองปุ่มกดเริ่มการสุ่ม
     answer.grid(row=3, column=0, pady=8, padx=16)
     root2.mainloop() # ทำให้ Tkinter แสดงผล
 
