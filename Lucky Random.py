@@ -70,7 +70,7 @@ def RandomStudents():
         times = ent_lenght.get() # Input range
         lst_result = [] # list เพือนำมาเก็บคำตอบ
         if times in [str(i) for i in range(1, 11)]:# ดัก test case
-            while len(lst_result) <= int(times):# วิธีการที่ใช้ สุ่ม
+            while len(lst_result) < int(times):# วิธีการที่ใช้ สุ่ม
                 charge = ("63070%03d" %random.randint(1, 193))
                 if not charge in lst_result:
                     lst_result.append(charge)
