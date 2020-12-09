@@ -54,39 +54,37 @@ def RandomMiniGames():
             , "https://diep.io/"\
             , "https://surviv.io/"] # ลิงค์ของมินิเกมส์ .io
     webbrowser.open_new_tab(random.choice(r_games)) # สุ่มมินิเกมส์ใน browser ของผู้ใช้โดยเปิด Tab ใหม่
+
 def RandomSort():
     '''สุ่มวิธีการ sort'''
     def FunctionSort():
         ''' ฟังก์ชัน sort'''
         times = ent_lenght.get() # Input range
-        ans = [] # list เพือนำมาเก็บคำตอบ
-        lst = ['Selection Sort', 'Bubble Sort', 'Insertion Sort', 'Quick Sort', 'Merge Sort', 'Linear Search', 'Binary Search']# สิ่งที่จะนำมาใช้สุ่ม
-        if times in ['1' ,'2', '3', '4', '5', '6', '7']:# ดัก test case
+        lst_result = [] # list เพือนำมาเก็บคำตอบ
+        if times in [str(i) for i in range(1, 8)]:# ดัก test case
             for _ in range(int(times)):# วิธีการที่ใช้ สุ่ม
-                txt = random.choice(lst)
-                lst.remove(txt)
-                ans.append(txt)
-            lbl_result["text"] = " , ".join(ans)
+                lst_result.append("63070%03d" %random.randint(1, 193))
+            answer["text"] = "  ".join(lst_result)
         else:# ดัก Error 
             messagebox.showerror(title="Error", message="Must be integer 1-7")
 
-    window = Tk()# เรียกใช้ import tkinter
-    window.title("Sort Test Random")# ชื่อของ tkinter
-    frm_entry = Frame(master=window)
-    ent_lenght = Entry(master=frm_entry, width=10)#ขนาดของช่องรับ Input
-    lbl_lenght = Label(master=frm_entry, text="How many test you want to randomize? (1-7)")# format input
-    lbl_lenght.grid(row=1, column=0, sticky="w")#ตำแหน่งของ format input
-    ent_lenght.grid(row=1, column=1, sticky="w")#ตำแหน่งของ ช่องรับ Input
-    btn_rando = Button(master=window, text='Radomize', command=FunctionSort)#ปุ่มที่ใช้ในการเรียกฟังก์ชัน
-    lbl_result = Label(master=window, text="You need to do...")#ตำแหน่งที่ คำตอบจะออกมา
-    #ขนาดและตำแหน่ง
-    frm_entry.grid(row=1, column=0, padx=10)
-    btn_rando.grid(row=1, column=1, pady=10)
-    lbl_result.grid(row=2, column=0, padx=10)
-    window.mainloop() #ทำให้ Tkinter แสดงผล
-
+    root2 = Tk()# เรียกใช้ import tkinter
+    root2.title("Sort Test Random")# ชื่อของ tkinter
+    frm_entry = Frame(master=root2)
+    ent_lenght = Entry(master=frm_entry, width=5)#ขนาดของช่องรับ Input
+    btn_rando = Button(master=root2, bg="#21618C", fg="#AAAAAA", height=1, width=16, font=8, text='Radomize', command=FunctionSort)#ปุ่มที่ใช้ในการเรียกฟังก์ชัน
+    lbl_lenght = Label(master=frm_entry, text="How many test you want to randomize? (1-7)  ")# format input
+    answer = Label(master=root2, text="You need to do...") # ตำแหน่งที่ คำตอบจะออกมา
+    # ขนาดและตำแหน่ง
+    lbl_lenght.grid(row=1, column=0,) # ตำแหน่งของ format input
+    ent_lenght.grid(row=1, column=1,) # ตำแหน่งของ ช่องรับ Input
+    frm_entry.grid(row=1, column=0, pady=8, padx=12)
+    btn_rando.grid(row=2, column=0, pady=8, padx=12)
+    answer.grid(row=3, column=0, pady=8, padx=16)
+    root2.mainloop() # ทำให้ Tkinter แสดงผล
 
     FunctionSort()
+
 class Window(Frame):
     '''GUI'''
 
@@ -111,6 +109,7 @@ class Window(Frame):
         button4.grid(row=2, column=1, padx=20, pady=20)
         button5.grid(row=2, column=2, padx=20, pady=20)
         button6.grid(row=2, column=3, padx=20, pady=20)
+
 root = Tk() #???
 root.configure(background="#f0f0f0") #background
 root.title("Let's me decide for your...") #title
